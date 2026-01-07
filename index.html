@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nizamia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class', // Disable auto-dark mode
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              sidebar: '#F7F7F5',
+              border: '#E0E0E0',
+              text: '#37352F',
+              active: '#EFEFED',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      :root {
+        color-scheme: light; /* Forces browser to use light theme for native controls */
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        color: #37352F;
+        background-color: #FFFFFF;
+      }
+      /* Notion-like scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #D3D1CB;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #AEACA6;
+      }
+
+      /* Hide scrollbar utility */
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .hide-scrollbar {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+      }
+
+      /* Form Element Resets to fix Black Background/Text issues */
+      input, textarea, select {
+        background-color: #FFFFFF;
+        color: #37352F;
+      }
+      
+      /* Allow classes to override background (e.g., bg-gray-100 or bg-transparent) */
+      input[class*="bg-"], textarea[class*="bg-"], select[class*="bg-"] {
+        background-color: inherit;
+      }
+
+      /* Placeholder Styling */
+      input::placeholder, textarea::placeholder {
+        color: #9CA3AF !important; /* Tailwind gray-400 */
+        opacity: 1;
+      }
+
+      /* Checkbox Styling */
+      input[type="checkbox"] {
+        accent-color: #2563EB; /* blue-600 */
+      }
+
+      /* Print Styles for PDF Generation */
+      @media print {
+        @page { margin: 0.5cm; size: A4; }
+        
+        .no-print { 
+          display: none !important; 
+        }
+        
+        body { 
+          visibility: hidden; 
+          background: white;
+          -webkit-print-color-adjust: exact; 
+          print-color-adjust: exact;
+        }
+
+        .printable-content {
+          visibility: visible;
+          position: absolute !important;
+          top: 0 !important;
+          left: 0 !important;
+          width: 100% !important;
+          height: auto !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          overflow: visible !important;
+          background: white !important;
+          z-index: 9999;
+        }
+
+        .printable-content * {
+          visibility: visible;
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/client": "https://aistudiocdn.com/react-dom@^19.2.0/client",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "recharts": "https://aistudiocdn.com/recharts@^3.4.1",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
